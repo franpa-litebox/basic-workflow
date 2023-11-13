@@ -19,6 +19,7 @@ jobs:
         run: npm ci
       - name: Test code
         run: npm run test
+    needs: lint
   build:
     runs-on: "ubuntu-latest"
     steps:
@@ -28,3 +29,4 @@ jobs:
         run: npm ci
       - name: Build code
         run: npm run build
+    needs: test
